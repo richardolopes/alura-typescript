@@ -1,7 +1,5 @@
 export function domInject(id: string) {
     return function (target: any, key: string) {
-        console.log(target)
-
         let elemento: JQuery;
         const getter = () => {
             if (!elemento) {

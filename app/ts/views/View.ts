@@ -1,4 +1,4 @@
-import { tempoDeExecucao } from '../helpers/decorators/TempoDeExecucao';
+import { tempoDeExecucao } from '../helpers/index';
 
 export abstract class View<T> {
     protected _elemento: JQuery;

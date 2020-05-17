@@ -3,7 +3,6 @@ System.register([], function (exports_1, context_1) {
     var __moduleName = context_1 && context_1.id;
     function domInject(id) {
         return function (target, key) {
-            console.log(target);
             let elemento;
             const getter = () => {
                 if (!elemento) {
