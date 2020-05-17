@@ -47,6 +47,7 @@ System.register(["../models/Negociacao", "../models/Negociacoes", "../views/Nego
                     }
                     const neg = new Negociacao_1.Negociacao(data, parseInt(this._inputQuantidade.val()), parseFloat(this._inputValor.val()));
                     this._negociacoes.adiciona(neg);
+                    index_1.imprime(neg, this._negociacoes);
                     this._negociacoesView.update(this._negociacoes);
                     this._mensagem.update('Negociação adicionada com sucesso!');
                 }
@@ -64,8 +65,11 @@ System.register(["../models/Negociacao", "../models/Negociacoes", "../views/Nego
                     };
                     this._negociacaoService
                         .obterNegociacoes(isOK)
-                        .then(negociacoes => {
-                        negociacoes.forEach(negociacao => this._negociacoes
+                        .then(negociacoesParaImportar => {
+                        const negociacoesJaImportadas = this._negociacoes.paraArray();
+                        negociacoesParaImportar
+                            .filter(negociacao => !negociacoesJaImportadas.some(jaImportada => negociacao.ehIgual(jaImportada)))
+                            .forEach(negociacao => this._negociacoes
                             .adiciona(negociacao));
                         this._negociacoesView.update(this._negociacoes);
                     });

@@ -11,12 +11,10 @@ System.register([], function (exports_1, context_1) {
                     unidade = 's';
                     divisor = 1000;
                 }
-                console.log('-------------------------------');
-                console.log(`Parâmetros passados para o método ${propertyKey}: ${JSON.stringify(args)}`);
                 const temp = performance.now();
                 const retorno = metodo.apply(this, args);
                 const temp2 = performance.now();
-                console.log(`O retorno do método ${propertyKey} é ${JSON.stringify(retorno)}`);
+                console.log('-------------------------------');
                 console.log(`O tempo de execução do método ${propertyKey} é ${(temp2 - temp) / divisor}${unidade}`);
                 console.log('-------------------------------');
                 return retorno;
