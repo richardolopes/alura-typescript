@@ -16,7 +16,7 @@ export function tempoDeExecucao(emSegundos = false) {
             const temp2 = performance.now()
 
             console.log('-------------------------------');
-            console.log(`O tempo de execução do método ${propertyKey} é ${(temp2 - temp) / divisor}${unidade}`);
+            console.log(`O tempo de execução do método '${propertyKey}()' é ${(temp2 - temp) / divisor}${unidade}`);
             console.log('-------------------------------');
 
             return retorno;

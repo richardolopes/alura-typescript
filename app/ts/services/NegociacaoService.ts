@@ -11,7 +11,8 @@ export class NegociacaoService {
                     .map(dado => new Negociacao(new Date(), dado.vezes, dado.montante))
             )
             .catch(err => {
-                throw new Error(err.message)
+                console.log(err.message);
+                throw new Error('Não foi possível importar os dados.')
             });
     }
 }
